@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;500&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    /* padding: 0; */
+}
+
+body{
+height: 100vh;
+position: relative;
+font-family: 'Poppins', sans-serif;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    padding: 2em 0;
+    border: 1px solid red;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    border: 2px solid greenyellow;
+}
+.container{
+    /* border: 2px solid black; */
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+.card{
+    /* white-space: pre; */
+    line-height: 2;
+    text-align: center;
+    padding: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 250px;
+}
+/* Model Design */
+.modal {
+    display: none; /*Hidden by default*/
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-card {
+    text-align: center;
+    font-family: inherit;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 1em;
+    border: 1px solid #888;
+    width:15%; /*Could be more or less, depending on screen size*/
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border-radius: 1em;
+  }
+  .modal-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+  }
+input{
+    font-size: 1rem;
+    font-family: inherit;
+    padding: 0.5em;
+}
+.data-enter{
+    width: 90%;
+
+}
+.submit{
+    background-color: aquamarine;
+    width: 90%;
+}
+.footer{
+    padding: 0.75em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.btn{
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    font-size: 1.2rem;
+    padding: 0.5em;
+    border-radius: 10px;
+}

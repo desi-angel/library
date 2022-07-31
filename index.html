@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
+
+</head>
+<body>
+    <header>
+        <h1 class="title">Library</h1>
+        <button class="btn login">Log In</button>
+    </header>
+    <main>
+        <button class="btn add">Add Book</button>
+        <div class="modal">
+            <div class="modal-card">
+                <div class="modal-header">
+                    <h2>Add New Book</h2>
+                </div>
+                <form class="modal-content" onsubmit="return false">
+                    <div class="inputs">
+                        <input type="text" class="data-enter" name="title" id="title" placeholder="title">
+                    </div>
+                    <div class="inputs">
+                        <input type="text" class="data-enter" name="author" id="author" placeholder="author">
+                    </div>
+                    <div class="inputs">
+                        <input type="number" class="data-enter" name="pages" id="pages" placeholder="pages">
+                    </div>
+                    <div>
+                        <label for="read">Have you read it ? </label>
+                        <input type="checkbox" name="read" value="true" />
+
+                    </div>
+                    <div>
+                        <button type="submit" class="btn submit" value="">Submit</button>
+                    </div>
+                </form>
+        </div>
+        </div>
+        <div class="container">
+           
+    </main>
+    <footer><p>
+        Copyright ©
+        2022 desiangel
+    </p><i class="mdi mdi-github" style="font-size: 32px;"></i>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
