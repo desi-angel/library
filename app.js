@@ -1,17 +1,18 @@
-function makeBook(title,author,pages,haveRead){
-    //console.log(this);
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.haveRead = haveRead;
-}
-//prototype function
-makeBook.prototype.toggle = function(){
-    if(this.haveRead === true){
-        this.haveRead = false;
+class createBook {
+    constructor(title,author,pages,haveRead){
+        this.title =title;
+        this.author = author;
+        this.pages = pages;
+        this.haveRead = haveRead;
     }
-    else{
-        this.haveRead = true;
+
+    toggle(){
+        if(this.haveRead === true){
+            this.haveRead = false;
+        }
+        else{
+            this.haveRead = true;
+        }
     }
 }
 
@@ -98,7 +99,7 @@ let submit = document.querySelector('.submit');
 submit.addEventListener('click', () => {
     let inputArr = getInputs();
     modal.style.display = 'none';
-    let book = new makeBook(...inputArr);
+    let book = new createBook(...inputArr);
     myLibrary.push(book);
     displayBook(book,bookNum);
     bookNum++;
