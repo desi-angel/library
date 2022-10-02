@@ -1,18 +1,48 @@
-function makeBook(title,author,pages,haveRead){
-    //console.log(this);
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.haveRead = haveRead;
+class createBook {
+    constructor(title,author,pages,haveRead){
+        this.title =title;
+        this.author = author;
+        this.pages = pages;
+        this.haveRead = haveRead;
+    }
+
+    toggle(){
+        if(this.haveRead === true){
+            this.haveRead = false;
+        }
+        else{
+            this.haveRead = true;
+        }
+    }
 }
-//prototype function
-makeBook.prototype.toggle = function(){
-    if(this.haveRead === true){
-        this.haveRead = false;
-    }
-    else{
-        this.haveRead = true;
-    }
+
+// form Validation
+function formValidation(){
+    const title = document.querySelector('#title');
+    const author = document.querySelector("#author");
+    const check = document.querySelector("#read")
+
+        if (title.validity.valueMissing)
+        {
+            title.setCustomValidity("Please Enter Book Name");
+            title.reportValidity();
+        }
+        else title.setCustomValidity('');
+
+        if(author.validity.valueMissing)
+        {
+            author.setCustomValidity("Please Enter Author Name");
+            author.reportValidity();
+        }
+        else author.setCustomValidity('');
+       
+        if(check.validity.valueMissing)
+        {
+            check.setCustomValidity("Please Select if read or not");
+            check.reportValidity();
+        }
+        else check.setCustomValidity('');
+        
 }
 
 //Displaying the modal
@@ -94,15 +124,16 @@ let myLibrary = []; //initializing variables
 let bookNum = 0;
 
 //clicking submit button
-let submit = document.querySelector('.submit');
-submit.addEventListener('click', () => {
-    let inputArr = getInputs();
-    modal.style.display = 'none';
-    let book = new makeBook(...inputArr);
-    myLibrary.push(book);
-    displayBook(book,bookNum);
-    bookNum++;
-    clearInputFields();
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let inputArr = getInputs();
+        modal.style.display = 'none';
+        let book = new createBook(...inputArr);
+        myLibrary.push(book);
+        displayBook(book,bookNum);
+        bookNum++;
+        clearInputFields();
 }); 
 
 //Add function to remove button and read button
